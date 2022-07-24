@@ -1,0 +1,79 @@
+@media screen and (max-width: 767px) {
+  .nav {
+    padding: 0 5vw;
+    .bar {
+      display: flex;
+    }
+    ul {
+      position: fixed;
+      padding: 20px !important;
+      top: 0;
+      left: -70vw;
+      width: 70vw;
+      height: 100vh;
+      background: var(--gray-1);
+      @include flex(flex-start, flex-start, column, 10px);
+      z-index: 4;
+      transition: 0.5s ease-in-out;
+    }
+    .lang {
+      padding: 2.5px;
+      &_name {
+        display: none;
+      }
+      &_icon {
+        margin-left: 0;
+      }
+    }
+    &.active {
+      ul {
+        left: 0;
+        li {
+          a {
+            &::before {
+              top: 0;
+              width: 2.5px;
+              height: 0;
+            }
+            &:hover,
+            &.nuxt-link-exact-active {
+              padding: 5px 10px;
+              &::before {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+      .close {
+        right: 0;
+      }
+    }
+  }
+
+  .home {
+    @include flex(center, space-between, column, 10px);
+    --size: 90vw;
+    &_content {
+      margin-top: 100px;
+      @include flex(center, center, column, 0px);
+      h3 {
+        font-size: 1.45em;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    &_img {
+      svg {
+        @include size(calc(var(--size) * 1.5), calc(var(--size) * 1.5));
+      }
+      img {
+        width: 80%;
+      }
+    }
+    &_social {
+      display: none;
+    }
+  }
+}

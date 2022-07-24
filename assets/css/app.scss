@@ -1,0 +1,215 @@
+@import "iCode";
+
+.nav {
+  position: fixed;
+  padding: 5vh 5vw;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  // background: var(--white);
+  @include flex(center, space-between);
+  z-index: 3;
+  .bar {
+    padding: 5px 0;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    @include flex(center, space-between, column);
+    display: none;
+    span {
+      height: 2px;
+      width: 100%;
+      background: var(--gray-9);
+      transition: 0.5s;
+    }
+  }
+  ul {
+    @include flex(center, center, row, 20px);
+    li {
+      a {
+        position: relative;
+        padding: 5px;
+        color: var(--gray-8);
+        font-family: "Jost", sans-serif;
+        transition: 0.2s;
+        &::before {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          height: 2.5px;
+          width: 0%;
+          background: var(--teal-1);
+          transition: 0.2s ease-in-out;
+        }
+        &:hover,
+        &.nuxt-link-exact-active {
+          color: var(--teal-1);
+          // ?font-weight: 500;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .close {
+    position: fixed;
+    top: 0;
+    right: -30vw;
+    width: 30vw;
+    height: 100vh;
+    z-index: 4;
+  }
+  .lang {
+    padding: 5px 5px 5px 6px;
+    cursor: pointer;
+    color: var(--teal-1);
+    gap: 2.5px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1.5px var(--teal-1);
+    @include flex(center, space-between);
+    overflow: hidden;
+    transition: 0.5s;
+    &:hover {
+      background: var(--teal-1);
+      color: var(--white);
+    }
+    &_name {
+      font-size: 1em;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      .letter {
+        display: inline-block;
+        line-height: 1em;
+      }
+    }
+    &_icon {
+      margin-left: 2px;
+      @include size(27px, 27px);
+      @include flex;
+      border-radius: 50%;
+      background: var(--teal-1);
+      i {
+        font-size: 16px !important;
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.home {
+  padding: 0 5vw;
+  min-height: 100vh;
+  @include flex(stratch, space-between);
+  --size: calc(90vw / 3);
+
+  &_content {
+    position: relative;
+    width: var(--size);
+    @include flex(flex-start, center, column, 5px);
+    z-index: 2;
+    .ml11 {
+      font-weight: 500;
+      font-size: 3em;
+      color: var(--teal-1);
+      .text-wrapper {
+        position: relative;
+        display: inline-block;
+        padding-top: 0.1em;
+        padding-right: 0.05em;
+        padding-bottom: 0.15em;
+      }
+      .line {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--teal-1);
+        transform-origin: 0 50%;
+      }
+      .line1 {
+        top: 0;
+        left: 0;
+      }
+      .letter {
+        display: inline-block;
+        line-height: 1em;
+      }
+    }
+    h3 {
+      font-size: 2em;
+      font-weight: 500;
+      color: var(--gray-8);
+    }
+    p {
+      width: 100%;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--gray-8);
+    }
+    p + span {
+      margin-top: 5px;
+      @include flex;
+      gap: 10px;
+      .btn {
+        padding: 7px 15px;
+        color: var(--color-4);
+        font-size: 14px;
+        font-weight: 500;
+        background: transparent;
+        border-radius: 4px;
+        transition: 0.5s;
+        &:first-child {
+          color: var(--teal-1);
+          font-weight: 600;
+          background: var(--teal-1);
+        }
+        &:hover {
+          background: var(--color-2);
+        }
+      }
+    }
+    .btn {
+      color: var(--teal-1) !important;
+      &:nth-child(1) {
+        color: var(--white) !important;
+      }
+      &:hover {
+        color: var(--white) !important;
+        background: var(--gray-4) !important;
+        &:nth-child(1) {
+          color: var(--teal-1) !important;
+          background: var(--gray-4) !important;
+        }
+      }
+    }
+  }
+  &_img {
+    width: var(--size);
+    align-self: flex-end;
+    @include flex(center, center);
+    img {
+      position: relative;
+      width: 100%;
+    }
+    svg {
+      position: absolute;
+      // transform: translateY(-50px);
+      @include size(calc(var(--size) * 1.7), calc(var(--size) * 1.7));
+      path {
+        fill: var(--gray-4);
+      }
+    }
+  }
+  &_social {
+    width: var(--size);
+    @include flex(center, center, column, 10px);
+  }
+  // background: url(../img/bg.png) center/cover;
+}
+
+@import "media";

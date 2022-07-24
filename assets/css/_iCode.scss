@@ -1,0 +1,156 @@
+@mixin flex($ai: center, $jc: center, $fd: row, $gap: 0) {
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  justify-content: $jc;
+  gap: $gap;
+}
+
+@mixin grid($gc: auto, $gr: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: $gc;
+  grid-template-rows: $gr;
+  gap: $gap;
+}
+
+@mixin size($mh: auto, $mw: auto) {
+  min-height: $mh;
+  min-width: $mw;
+  max-height: $mh;
+  max-width: $mw;
+}
+
+@mixin border($w: 4px, $c: var(--color-3), $r: 0) {
+  border: $w solid $c;
+  border-radius: $r;
+}
+
+@mixin font($size: 3em, $weight: 500, $line: 1.5) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+}
+
+@mixin title {
+  margin-bottom: 10px;
+  place-self: center;
+  color: var(--logo-50);
+  font-weight: 500;
+  border-radius: 20px;
+  text-transform: uppercase;
+  text-decoration: wavy underline var(--primary-400);
+  letter-spacing: 0.5px;
+}
+
+// *
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Popins", sans-serif;
+  scroll-behavior: smooth;
+  // cursor: url(../img/cursor6.png), auto;
+  // user-select: none;
+  // resize: both;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::selection {
+    color: var(--white);
+    background: var(--teal-1);
+  }
+}
+
+//? colors
+:root {
+  --white: #fff;
+  // // --color-1: #171836;
+  // --color-1: #002028;
+  // // --color-2: #1f2143;
+  // --color-2: #00181e;
+  // --color-2-1: #00181e80;
+  // // --color-3: #f5443b;
+  // // --color-3: #00dc82;
+  --teal-1: #078ce5;
+  // *color gray
+  --gray-1: #f6f8f9;
+  --gray-1a: #f4f6f6;
+  --gray-2: #edf1f2;
+  --gray-3: #e0e6e8;
+  --gray-4: #d5dce0;
+  --gray-5: #b7bfc6;
+  --gray-6: #9ca6af;
+  --gray-7: #848f99;
+  --gray-8: #646f79;
+  --gray-9: #222b37;
+  --gray-10: #151b26;
+}
+
+// h2 {
+//   padding: 0 10px;
+//   color: var(--gray-8);
+//   font-size: 2.5em;
+//   font-weight: 600;
+//   transition: 0.5s;
+// }
+
+// .heading {
+//   position: relative;
+//   margin: 20px 0;
+//   @include flex;
+//   h1 {
+//     color: #8e9a9d;
+//     font-size: 5em;
+//     white-space: nowrap;
+//     text-transform: uppercase;
+//     opacity: 0.1;
+//   }
+//   h2 {
+//     position: absolute;
+//     padding-bottom: 10px;
+//     font-size: 2em;
+//     box-shadow: 0 4px 0 var(--color-3);
+//   }
+// }
+
+a {
+  text-decoration: none;
+  color: var(--teal-1);
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+input,
+select,
+button,
+textarea,
+select,
+fieldset,
+hr {
+  border: none;
+  outline: none;
+}
+
+input,
+textarea {
+  transition: 0.5s;
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    background: url("https://image.flaticon.com/icons/png/512/659/659891.png")
+      center/cover;
+  }
+  &::placeholder {
+    color: var(--logo-50);
+    transition: 0.5s;
+  }
+  &:focus::placeholder {
+    transform: translateX(-100%);
+  }
+}
