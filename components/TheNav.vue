@@ -7,11 +7,11 @@
     </div>
     <h2>AzizDev</h2>
     <ul>
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/about">Resume</router-link></li>
-      <li><router-link to="/contact">Portfolio </router-link></li>
+      <li><router-link to="/">Bosh sahifa</router-link></li>
+      <li><router-link to="/about">Men haqimda</router-link></li>
+      <li><router-link to="/contact">Loyihalar</router-link></li>
       <li><router-link to="/contact">Xizmatlar </router-link></li>
-      <li><router-link to="/contact">Blog </router-link></li>
+      <li><router-link to="/contact">Blog</router-link></li>
       <li><router-link to="/contact">Aloqa </router-link></li>
     </ul>
     <div class="close" @click="nav = !nav"></div>

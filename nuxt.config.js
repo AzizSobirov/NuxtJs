@@ -6,7 +6,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: "%s",
-    title: "azizdev",
+    title: "Aziz Sobirov Developer",
     htmlAttrs: {
       lang: "en",
     },
@@ -23,7 +23,17 @@ export default {
   css: ["./assets/css/app.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: "@/plugins/aos", mode: "client" }],
+  purgeCSS: {
+    whitelist: [
+      "aos-init",
+      "aos-animate",
+      "data-aos-delay",
+      "data-aos-duration",
+      "fade-up",
+      "zoom-in",
+    ],
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -47,7 +57,7 @@ export default {
 
   pwa: {
     meta: {
-      name: "azizdev",
+      name: "Aziz Sobirov",
       description: "Portfolio Aziz Sobirov",
       theme_color: "#fafafa",
     },
@@ -105,7 +115,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ["~/assets/style/variables.css"],
+    // customVariables: ["~/assets/css/variables.css"],
     theme: {
       dark: false,
       themes: {

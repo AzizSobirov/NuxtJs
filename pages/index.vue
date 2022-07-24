@@ -25,10 +25,10 @@
         </svg>
         <img
           src="https://www.uiocean.com/wrap/kanye/assets/img/user-image.png"
-          alt=""
+          alt="Aziz Sobirov Dev"
         />
       </div>
-      <div class="home_social">
+      <div class="home_social" data-aos="fade-up" data-aos-delay="300">
         <!-- get social network icons -->
         <a href="#">
           <v-icon>
@@ -52,10 +52,36 @@
         </a>
       </div>
     </section>
+    
   </main>
 </template>
 <script>
 export default {
+  head: {
+    title: "Aziz Sobirov Developer",
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "author",
+        name: "author",
+        content: "Aziz Sobirov",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Men  Aziz Sobirov  Xorazm viloyati  Hazorasp  tumanida  Ziyolilar Oilasida  tug`ilganman.  Dasturchi hamda mexanikman.  https://www.azizdev.uz/ sayti orqali men haqimda batafsil malumot olasiz. CEO & Dasturchi, Aziz Dev, Abdul Aziz Sobirov",
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content:
+          "Aziz Sobirov, Aziz Sobirov Dev, AzizDev, Aziz Sobirov Developer, Abdulaziz Sobirov , iCode Team Owner, Uzbekistan Aziz Sobirov, Uzbek developer, Khorezm Aziz Sobirov ",
+      },
+    ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  },
   mounted() {
     var textWrapper = document.querySelector(".ml11 .letters");
     textWrapper.innerHTML = textWrapper.textContent.replace(

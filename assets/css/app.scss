@@ -103,6 +103,7 @@
 .home {
   padding: 0 5vw;
   min-height: 100vh;
+  background: var(--gray-1);
   @include flex(stratch, space-between);
   --size: calc(90vw / 3);
 

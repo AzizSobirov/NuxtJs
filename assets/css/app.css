@@ -309,6 +309,7 @@ textarea:focus::placeholder {
 .home {
   padding: 0 5vw;
   min-height: 100vh;
+  background: var(--gray-1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
