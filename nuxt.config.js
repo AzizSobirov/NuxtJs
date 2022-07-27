@@ -1,4 +1,3 @@
-import colors from "vuetify/es5/util/colors";
 import uz from "./locales/uz";
 import en from "./locales/en";
 
@@ -41,10 +40,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify",
     "nuxt-animejs",
     "@nuxtjs/google-fonts",
-    "nuxt-use-motion",
   ],
 
   googleFonts: {
@@ -112,26 +109,6 @@ export default {
     "nuxt-sweetalert2",
     "@nuxtjs/pwa",
   ],
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  vuetify: {
-    // customVariables: ["~/assets/css/variables.css"],
-    theme: {
-      dark: false,
-      themes: {
-        dark: {
-          // primary: colors.blue.darken2,
-          primary: "#078ce5",
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

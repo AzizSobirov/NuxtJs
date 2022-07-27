@@ -11,7 +11,7 @@
       left: -70vw;
       width: 70vw;
       height: 100vh;
-      background: var(--gray-1);
+      background: var(--purple-1);
       @include flex(flex-start, flex-start, column, 10px);
       z-index: 4;
       transition: 0.5s ease-in-out;
@@ -52,28 +52,36 @@
   }
 
   .home {
-    @include flex(center, space-between, column, 10px);
-    --size: 90vw;
+    @include flex(center, center, column, 50px);
     &_content {
-      margin-top: 100px;
-      @include flex(center, center, column, 0px);
-      h3 {
-        font-size: 1.45em;
+      width: 100%;
+      &-text {
+        @include flex(center, center, column, 10px);
+        h4 {
+          left: 15px;
+        }
+        h1 {
+          font-size: 2.5em;
+          line-height: 40px;
+          text-align: center;
+        }
+        p {
+          padding: 0;
+          text-align: center;
+          &::before {
+            display: none;
+          }
+        }
       }
-      p {
-        text-align: center;
+      &-networks {
+        display: none;
       }
     }
-    &_img {
-      svg {
-        @include size(calc(var(--size) * 1.5), calc(var(--size) * 1.5));
-      }
-      img {
-        width: 80%;
-      }
-    }
-    &_social {
+    &_scroll-line {
       display: none;
+    }
+    img {
+      width: 80%;
     }
   }
 }

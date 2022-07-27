@@ -5,7 +5,10 @@
       <span></span>
       <span></span>
     </div>
-    <h2>AzizDev</h2>
+    <div class="logo">
+      <img src="../static/logo.png" alt="Aziz Sobirov portfolio" />
+      <h2>Aziz<mark>Dev</mark></h2>
+    </div>
     <ul>
       <li><router-link to="/">Bosh sahifa</router-link></li>
       <li><router-link to="/about">Men haqimda</router-link></li>
@@ -18,7 +21,7 @@
     <div class="lang" @click="changeLang()">
       <h3 class="lang_name">{{ $t("lang") }}</h3>
       <div class="lang_icon">
-        <v-icon dark>mdi-translate</v-icon>
+        <i class="fa-regular fa-globe"></i>
       </div>
     </div>
   </nav>
