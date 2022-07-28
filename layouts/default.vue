@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <div id="app">
     <the-nav></the-nav>
     <nuxt />
-  </v-app>
+  </div>
 </template>
 <script>

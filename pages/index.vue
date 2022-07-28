@@ -3,13 +3,14 @@
     <section class="home">
       <div class="home_content">
         <div class="home_content-text">
-          <h4>Hello!</h4>
-          <h1>
-            We have Design Experience
-          </h1>
+          <the-title
+            short="Hello!"
+            text="We have Design Experience"
+          ></the-title>
+
           <p>
             Hi! I'm Aziz Sobirov. <br />
-            I'm a web designer and developer from the UK.
+            I'm a web designer and developer from Uzbekistan.
           </p>
           <span>
             <nuxt-link to="/">
@@ -21,9 +22,12 @@
           </span>
         </div>
         <div class="home_content-networks">
-          <h3>Check out my</h3>
+          <p>Check Out My</p>
           <span>
-            <a href="#" class="fa-regular fa-facebook"> </a>
+            <a href="#" class="fa-brands fa-facebook-f"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-telegram"></a>
+            <a href="#" class="fa-brands fa-linkedin"></a>
           </span>
         </div>
       </div>
@@ -33,10 +37,58 @@
         <h4>Scroll Down</h4>
       </div>
     </section>
+
+    <section class="services">
+      <div class="services_content">
+        <the-title short="Service" text="Services I Offer"></the-title>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+          dolorem dolor accusamus sint fugit perferendis adipisci et consequatur
+          necessitatibus. Eius?
+        </p>
+        <the-circle text="View all Services - View all Services -" id="btn1" link="/services"></the-circle>
+      </div>
+      <ul class="services_list">
+        <li v-for="service in list" :key="service.id">
+          <h2>{{ service.id }}/</h2>
+          <div>
+            <h1>{{ service.title }}</h1>
+            <span>
+              <p>Explore</p>
+              <nuxt-link
+                :to="/services/ + service.link"
+                class="fa-regular fa-arrow-up-right"
+              ></nuxt-link>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      list: [
+        {
+          id: "01",
+          title: "Web UI/UX Design",
+          link: "web-design",
+        },
+        {
+          id: "02",
+          title: "Mobile App UI/UX Design",
+          link: "web-design",
+        },
+        {
+          id: "03",
+          title: "Dashboard & Web Design",
+          link: "web-design",
+        },
+      ],
+    };
+  },
   head: {
     title: "Aziz Sobirov Developer",
     meta: [
@@ -62,48 +114,5 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  // mounted() {
-  //   var textWrapper = document.querySelector(".ml11 .letters");
-  //   textWrapper.innerHTML = textWrapper.textContent.replace(
-  //     /([^\x00-\x80]|\w)/g,
-  //     "<span class='letter'>$&</span>"
-  //   );
-
-  //   this.$anime
-  //     .timeline({ loop: true })
-  //     .add({
-  //       targets: ".ml11 .line",
-  //       scaleY: [0, 1],
-  //       opacity: [0.5, 1],
-  //       easing: "easeOutExpo",
-  //       duration: 700,
-  //     })
-  //     .add({
-  //       targets: ".ml11 .line",
-  //       translateX: [
-  //         0,
-  //         document.querySelector(".ml11 .letters").getBoundingClientRect()
-  //           .width + 20,
-  //       ],
-  //       easing: "easeOutExpo",
-  //       duration: 700,
-  //       delay: 100,
-  //     })
-  //     .add({
-  //       targets: ".ml11 .letter",
-  //       opacity: [0, 1],
-  //       easing: "easeOutExpo",
-  //       duration: 600,
-  //       offset: "-=500",
-  //       delay: (el, i) => 34 * (i + 1),
-  //     })
-  //     .add({
-  //       targets: ".ml11",
-  //       opacity: 0,
-  //       duration: 1000,
-  //       easing: "easeOutExpo",
-  //       delay: 1000,
-  //     });
-  // },
 };
 </script>
